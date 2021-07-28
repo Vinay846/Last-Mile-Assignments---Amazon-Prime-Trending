@@ -24,9 +24,9 @@ const App = ({slides}) => {
     <>
       <h1 data-testid="title">{arr[state].title}</h1>
       <p data-testid="text">{arr[state].text}</p>
-      <button onClick={() => setState(0)} data-testid="button-restart">Restart</button>
-      <button onClick={handlePrev} data-testid="button-prev">Prev</button>
-      <button onClick={handleNext} data-testid="button-next">Next</button>
+      <button disabled={state === 0} onClick={() => setState(0)} data-testid="button-restart">Restart</button>
+      <button disabled={state === 0} onClick={handlePrev} data-testid="button-prev">Prev</button>
+      <button disabled={state === arr.length-1} onClick={handleNext} data-testid="button-next">Next</button>
     </>
   )
 }
